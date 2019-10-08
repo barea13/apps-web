@@ -8,10 +8,16 @@
 
     <script>
 
-    var aciertos = 0;
-
     function Corregir() {
-        
+        var aciertos = 0;
+
+        // Control de la pregunta 1
+        if(document.getElementById("p1").value == "INSERT"){
+            aciertos++;
+        }
+
+        // Resultados de la correcion
+        alert(aciertos);
     }
     </script>
 </head>
