@@ -33,6 +33,11 @@
             aciertos++; 
         }
 
+        // Control de la pregunta 5
+        if(document.getElementById("p5").value == "INSERT") {
+            aciertos++;
+        }
+
         // Resultados de la correcion
         alert(aciertos);
     }
@@ -57,6 +62,14 @@
     DROP <input type="checkbox" id="p4-2"><br>
     DELETE <input type="checkbox" id="p4-3"><br>
     ALTER <input type="checkbox" id="p4-4"><br>
+
+    <p>5. ¿Con qué instrucción se insertan registros en una tabla?</p>
+    <select id="p5">
+        <option value="0">-- Elegir respuesta --</option>
+        <option value="DELETE">DELETE</option>
+        <option value="INSERT">INSERT</option>
+        <option value="DROP">DROP</option>
+    </select>
 
     <p><button onclick="Corregir()">Corregir</button></p>
 </body>
