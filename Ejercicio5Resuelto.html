@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 5 RESUELTO</title>
+
+    <script>
+
+            var letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+            letras = letras.split("");
+
+
+            function Comprobar(){
+
+                var dni = document.getElementById("dni").value;
+                var letra = document.getElementById("letra").value;
+                if (letra == letras[dni%23]){
+
+                        alert("Pole");
+
+                } 
+
+                else{
+
+                        alert("edit: fail");
+
+                }
+
+            }
+    </script>
+    
+
+
+
+</head>
+
+<body>
+
+    <h1> VERIFICACIÓN DNI</h1>
+
+    Número de DNI <input type="number" id="dni"/>
+
+    Letra de DNI <select name="" id="letra">   
+
+            <script>
+    
+                    for (let i=0; i<letras.length; i++){
+            
+                            document.write("<option value='" + letras[i] + " '>" + letras[i] + " </option>");
+            
+                    }
+                
+                </script>
+            
+
+
+    </select>
+    <button onclick="Comprobar()">Comprobar</button>
+
+   
+</body>
+</html>

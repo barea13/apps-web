@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario Genérico</title>
+
+    <script>
+        function VerDatos(f){
+
+            //alert(document.getElementById("campo1").value);
+            //alert(f.campo1.value);
+            var campo1 = document.getElementById("campo1").value
+                if (campo1 == ""){
+
+                    alert("Esta vacio shur");
+                    return false;
+                }
+
+            
+            var elementosRadio = f.campo3;
+            alert(elementosRadio);
+
+                //Finalmente
+                return true;
+        }
+    </script>
+
+</head>
+<body>
+
+
+    <form action="" method="GET" onsubmit="return VerDatos(this)">
+        Campo1 <input type="text" id="campo1" name="campo1" />
+        <br/>
+
+        Campo2 <input type="password" id="campo2" name="campo2"/>
+        <br/>
+
+        Campo3 Op13 <input type="radio" id="campo13" value="Plex" name="campo3"/>
+               Op16 <input type="radio" id="campo14" value="Tautulli" name="campo3"/>
+        <br/>
+
+        Campo4 <input type="checkbox" id="campo4" name="campo4"/>
+        <br/>
+
+        Campo5 <select id="campo4" name="campo5">
+                <option value="Pole">Pole</option>
+                <option value="Subpole">Subpole</option>
+                <option value="fAIL">fAIL</option>
+        <br/>
+
+        <input type="submit" />
+        <input type="reset" />
+
+
+
+    </form>
+    
+</body>
+</html>

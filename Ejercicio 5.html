@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 5</title>
+</head>
+
+<script>
+
+function comprobar_nif(dni){
+    var numero;
+    var let;
+    var letra;
+    var expresion_regular_dni;
+    
+    expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+    
+    if(expresion_regular_dni.test (dni) == true){
+       numero = dni.substr(0,dni.length-1);
+       let = dni.substr(dni.length-1,1);
+       let=let.toUpperCase();
+       numero = numero % 23;
+       letra='TRWAGMYFPDXBNJZSQVHLCKET';
+       letra=letra.substring(numero,numero+1);
+       if (letra!=let) {
+         alert('La letra no corresponde con el DNI.');          
+       }else{
+         alert('DNI correcto.');
+         return true;
+       }
+    }else{
+       alert('DNI no válido.');
+    }
+    return false;
+}</script>
+<body>
+    
+    <p> 
+        <input type="text" id="txtDNI" placeholder='Introduce DNI'> <span class="TESTBUTTON" 
+        onclick="comprobar_nif($('#txtDNI').val())">Probar</span>
+    
+    </p>
+
+</body>
+</html>
