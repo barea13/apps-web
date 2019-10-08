@@ -10,10 +10,27 @@
 
     function Corregir() {
         var aciertos = 0;
-
         // Control de la pregunta 1
-        if(document.getElementById("p1").value == "INSERT"){
+        if(document.getElementById("p1").value.toUpperCase().trim() == "INSERT"){
             aciertos++;
+        }
+
+        // Control de la pregunta 2
+        if(!document.getElementById("p2").checked) {
+            aciertos++;
+        }
+
+        // Control de la pregunta 3
+        if(document.getElementsByName("p3")[1].checked) {
+            aciertos++;
+        }
+
+        // Control de la pregunta 4
+        if(document.getElementById("p4-1").checked && 
+        !document.getElementById("p4-2").checked &&
+        document.getElementById("p4-3").checked &&
+        !document.getElementById("p4-4").checked) { 
+            aciertos++; 
         }
 
         // Resultados de la correcion
@@ -23,8 +40,24 @@
 </head>
 <body>
     <h1>Mini Test SQL</h1>
+
     <p>1. ¿Qué intruscción SQL permite insertar un registro en una tabla?</p>
-    <input type="text" name="campo1" id="campo1"> 
-    <button onclick="Corregir()">Corregir</button>
+    <input type="text" id="p1"> 
+
+    <p>2. ¿Es INSERT un comando DDL?</p>
+    <input type="checkbox" id="p2"> 
+
+    <p>3. ¿Con qué instrucción se insertan registros en una tabla?</p>
+    DELETE <input type="radio" name="p3" id="p3">
+    INSERT <input type="radio" name="p3" id="p3">
+    DROP <input type="radio" name="p3" id="p3">
+
+    <p>4. ¿Cuáles de estos son comandos DML?</p>
+    INSERT <input type="checkbox" id="p4-1"><br>
+    DROP <input type="checkbox" id="p4-2"><br>
+    DELETE <input type="checkbox" id="p4-3"><br>
+    ALTER <input type="checkbox" id="p4-4"><br>
+
+    <p><button onclick="Corregir()">Corregir</button></p>
 </body>
 </html>
